@@ -26,8 +26,9 @@ class byzp:
                 self.jstag.append(document.string)
 
             #HERE
-            self.pattern = re.compile('document\.getElementById\(\'dlbutton\'\)\.href = \"\/d\/([\d\w]*])\/\" \+ \(([\d]*]) % ([\d]*) + ([\d]*) % ([\d]*)\) \+ \"\/(.*?)\";')
-            print(self.pattern.match(self.jstag[8]))
+            self.rejstag = re.sub(r" ",r'',re.findall(r'(.*?);',self.jstag[8])[0])
+            self.rejstag_2 = self.rejstag.replace("document.getElementById('dlbutton').href=",'').replace('"','')
+            print(self.rejstag_2)
 
         except requests.exceptions.ConnectionError as error:
                sys.exit('{} {}'.format(userlog.error,error))
