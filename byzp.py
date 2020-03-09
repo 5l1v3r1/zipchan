@@ -1,3 +1,4 @@
+#Hi Bro, Follow My Instagram @ardho.ainullah, dont forget @wibuzone_id
 import re,sys,time
 import requests
 import argparse
@@ -65,8 +66,9 @@ class byzp:
 
     def viewsourceandfind(self):
         try:
-            self.reqs = requests.get(self.url,headers=self.data).text
-            self.soup = BeautifulSoup(self.reqs,'html.parser')
+            self.reqs = requests.get(self.url,headers=self.data)
+            print('[*] zippyshare bypass - Coded by \033[94mHero\033[97m \n    [-] status code response : %s\n'%(self.reqs.status_code))
+            self.soup = BeautifulSoup(self.reqs.text,'html.parser')
             self.jstag = []
 
             for document in self.soup.find_all('script'):
@@ -120,7 +122,7 @@ class result:
                sys.exit('%s site not zippyshare.com !'%(userlog.info))
 
         byzp_step = byzp(arg_result.url[0])
-        print('%s bypassed : %s'%(userlog.info,byzp_step.viewsourceandfind()))
+        print('[!] found, \033[92mbypassed\033[97m ! \n    [-] %s\n'%(byzp_step.viewsourceandfind()))
 
 if __name__=='__main__':
    result.main()
