@@ -1,4 +1,5 @@
 #Hi Bro, Follow My Instagram @ardho.ainullah, dont forget @wibuzone_id
+#auto download method? next time :)
 import re,sys,time
 import requests
 import argparse
@@ -67,7 +68,7 @@ class byzp:
     def viewsourceandfind(self):
         try:
             self.reqs = requests.get(self.url,headers=self.data)
-            print('[*] zippyshare bypass - Coded by \033[94mHero\033[97m \n    [-] status code response : %s\n'%(self.reqs.status_code))
+            print('\n[*] zippyshare bypass - Coded by \033[94mHero\033[97m \n    [-] status code response : %s\n'%(self.reqs.status_code))
             self.soup = BeautifulSoup(self.reqs.text,'html.parser')
             self.jstag = []
 
@@ -89,7 +90,7 @@ class byzp:
         except requests.exceptions.ConnectionError as error:
                sys.exit('{} {}'.format(userlog.error,error))
         except IndexError:
-               sys.exit('{} IndexError: result not found.'.format(userlog.info))
+               sys.exit('{} IndexError: result not found. try again'.format(userlog.info))
         except Exception as error:
                sys.exit('{} {}'.format(userlog.error,error))
 
